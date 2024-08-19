@@ -9,7 +9,8 @@ void main() => runApp(
   DevicePreview(
     enabled: !kReleaseMode,
     builder: (context) =>  MaterialApp(
-      useInheritedMediaQuery: true, 
+      useInheritedMediaQuery: true,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('My First Flutter Application'),
