@@ -12,12 +12,19 @@ void main() => runApp(
       useInheritedMediaQuery: true,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My First Application'),
+          title: const Text('My First Application'),
           centerTitle: true,
           backgroundColor: Colors.lightBlue[500]
         ),
         body: Center(
-          child: Text('Hello Programmers'),
+          child: Text(
+            'Hello Programmers',
+            style: TextStyle(
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 4.0,
+              color: Colors.grey[600],
+            )),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
