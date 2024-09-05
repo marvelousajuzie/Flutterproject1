@@ -10,31 +10,7 @@ void main() => runApp(
     enabled: !kReleaseMode,
     builder: (context) =>  MaterialApp(
       useInheritedMediaQuery: true,
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('My First Flutter Application'),
-          centerTitle: true,
-          backgroundColor: Colors.lightBlue[500],
-        ),
-        body: Center(
-          child: Text(
-            "Hello Programmers",
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.black,
-              fontFamily: 'Indieflower',
-            ),
-            ),
-        ), 
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Text('Click'),
-          backgroundColor: Colors.lightBlue[500],
-        ),
-      )
+      home: Scaffold()
       ), // Wrap your app
   ),
 );
