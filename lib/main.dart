@@ -8,11 +8,23 @@ import 'package:flutter/foundation.dart'; // Needed for kReleaseMode
 void main() => runApp(
   DevicePreview(
     enabled: !kReleaseMode,
-    builder: (context) =>  MaterialApp(
+    builder: (context) => const MaterialApp(
       useInheritedMediaQuery: true,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My First Application'),
+      home: FirstApp(),
+      ), // Wrap your app
+  ),
+);
+
+
+
+class FirstApp extends StatelessWidget {
+  const FirstApp ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return   Scaffold(
+      appBar: AppBar(
+      title: const Text('My First Application'),
           centerTitle: true,
           backgroundColor: Colors.lightBlue[500]
         ),
@@ -22,18 +34,19 @@ void main() => runApp(
             style: TextStyle(
               fontSize: 25.0,
               fontWeight: FontWeight.bold,
-              letterSpacing: 4.0,
+              letterSpacing: 2.0,
               color: Colors.grey[600],
+              fontFamily: 'IndieFlower',
             )),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          child: Text('Click'),
           backgroundColor: Colors.lightBlue[500],
+          child: Text('Click me'),
         ),
-      )
-      ), // Wrap your app
-  ),
-);
+      ) ;
+  }
+}
+
 
 
