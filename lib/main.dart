@@ -10,35 +10,24 @@ void main() => runApp(
     enabled: !kReleaseMode,
     builder: (context) => const MaterialApp(
       useInheritedMediaQuery: true,
-      home: FirstApp(),
+      home: NinjaCard(),
       ), // Wrap your app
   ),
 );
 
 
 
-class FirstApp extends StatelessWidget {
-  const FirstApp ({super.key});
+class NinjaCard extends StatelessWidget {
+  const NinjaCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
+    return Scaffold(
       appBar: AppBar(
-      title: const Text('Application'),
-          centerTitle: true,
-          backgroundColor: Colors.lightBlue[500]
-        ),
-        body: Center(
-          child: Image.asset('assets/space2.jpg'),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.lightBlue[500],
-          child: Text('Click'),
-        ),
-      ) ;
+        title: Text('Ninja ID Card'),
+        centerTitle: true,
+        backgroundColor: Colors.pinkAccent,
+      ),
+    );
   }
 }
-
-
-
