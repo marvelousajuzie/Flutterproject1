@@ -17,8 +17,15 @@ void main() => runApp(
 
 
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({super.key});
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int ninjaLevel = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +37,26 @@ class NinjaCard extends StatelessWidget {
         backgroundColor: Colors.pinkAccent,
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.pinkAccent,
+      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
+            Center(
+              child: CircleAvatar(
+              backgroundImage: AssetImage('assets/marvel.jpg'),
+              radius: 40.0,
+              ),
+            ),
+            Divider(
+              height: 90.0,
+              color: Colors.pinkAccent,
+            ),
             Text(
               'NAME:',
               style: TextStyle(
@@ -62,7 +84,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0,),
             Text(
-              '80.5',
+              '$ninjaLevel',
               style: TextStyle(
                 color: Colors.black,
                 letterSpacing: 2.0,
@@ -77,11 +99,13 @@ class NinjaCard extends StatelessWidget {
                   Icons.email,
                   color: Colors.black,
                 ),
+                 SizedBox(width: 10.0,),
                 Text(
                   'Marvelous12@gmail.com',
                   style: TextStyle(
                     color: Colors.black,
-                    fontsize : 18.0,
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
                   ),
                 ),
               ],
